@@ -1,0 +1,18 @@
+<html>
+<head>
+<link rel="stylesheet" href="/trains.css" />
+</head>
+<body>
+<form method="post" action="/filter">
+  <p>Platform <input type="text" name="platform" required /></p>
+  <input type="submit" value="Submit" />
+</form>
+<p><a href="/">View all platforms</a></p>
+<table>
+  <tr><th>Time</th><th>Destination</th><th>Platform</th></tr>
+  <% trains.forEach(function(t){ %>
+    <tr><td><%= t.departs %></td><td><%= t.stops[t.stops.length-1].name %></td><td><%= t.platform %></td></tr>
+  <% }); %>
+</table>
+</body>
+</html>

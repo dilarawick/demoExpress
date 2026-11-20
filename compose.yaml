@@ -1,0 +1,9 @@
+services:
+  web:
+    image: node:26.12.0
+    volumes:
+      - ./app:/usr/src/app
+    working_dir: /usr/src/app
+    ports:
+      - "82:9000"
+    command: sh -c "chmod +x run.sh && ./run.sh"
